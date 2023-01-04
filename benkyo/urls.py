@@ -14,8 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('', include('base.urls')) # that means every url that matches blank quotes, it would include the base urls
+    ]
