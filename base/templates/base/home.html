@@ -9,7 +9,7 @@
     <div>
         {% for room in rooms %} <!-- by using this syntax we can use for loop in html and other python like logic-->
             <div>
-                <h5>{{room.id}}--{{room.name}}</h5> <!--we can add variables inside double curly braces-->
+                <h5>{{room.id}}--<a href="/room/{{room.id}}">{{room.name}}</a></h5> <!--we can add variables inside double curly braces-->
             </div>
         {% endfor %}
     </div>
