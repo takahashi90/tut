@@ -17,8 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('base.urls')) # that means every url that matches blank quotes, it would include the base urls
+    path('', include('base.urls')), # that means every url that matches blank quotes, it would include the base urls
+    
     ]
