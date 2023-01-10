@@ -11,6 +11,7 @@ class Topic(models.Model):
 
 
 class Room(models.Model): 
+
     host = models.ForeignKey(User, on_delete = models.SET_NULL, null=True)
     topic = models.ForeignKey(Topic, on_delete = models.SET_NULL, null=True)
     name = models.CharField(max_length=200) # we have to specify the type of the model
@@ -23,6 +24,7 @@ class Room(models.Model):
         return self.name
 
 class Message(models.Model): # child model of Room
+    
     user = models.ForeignKey(User, on_delete = models.CASCADE)
     room = models.ForeignKey(Room, on_delete = models.CASCADE)
     body = models.TextField() # the message that user would write 
